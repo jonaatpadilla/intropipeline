@@ -4,6 +4,7 @@ pipeline {
     stage('Say Hello') {
       steps {
         echo "Hello ${MY_NAME}!"
+        echo "Hello ${params.Apellido}!"
         sh 'java -version'
       }
     }
@@ -13,6 +14,6 @@ pipeline {
     MY_NAME = 'Jonathan'
   }
   parameters {
-    string(name: 'Name', defaultValue: 'whoever you are', description: 'Who should I say hi to?')
+    string(name: 'Apellido', defaultValue: 'Padilla', description: 'Who should I say hi to?')
   }
 }

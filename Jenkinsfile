@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'openjdk11.0.12'
+    label 'openjdk11'
   }
   stages {
     stage('Say Hello') {

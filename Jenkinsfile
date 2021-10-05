@@ -36,8 +36,11 @@ pipeline {
     }
 
     stage('test: functional') {
+      when {
+        branch 'test'
+      }
       steps {
-        sh 'echo "Paso de test: functional"'
+        sh 'echo "Ejecucion de pruebas en rama test"'
       }
     }
 
@@ -68,16 +71,13 @@ pipeline {
   post {
     always {
       echo 'El pipeline se ejecuto exitosamente!'
-      mail(to: 'jpadilla@na-at.com.mx', subject: 'Pipeline exitoso', body: 'El pipeline se ejecuto exitosamente')
     }
 
     failure {
       echo 'Error en el pipeline del ejercicio del curso de docker'
-      mail(to: 'jpadilla@na-at.com.mx', subject: 'Pipeline fallido', body: 'Error en el pipeline del ejercicio del curso de docker')
     }
 
     aborted {
-      mail(to: 'jpadilla@na-at.com.mx', subject: 'Pipeline abortado', body: 'El pipeline se forzo a terminar')
       echo 'No termino de correr el pipeline, fue forzado a terminar'
     }
 

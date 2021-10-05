@@ -33,7 +33,7 @@ pipeline {
       steps {
         sh 'echo "Paso de test: Integration y calidad"'
         sh 'cd /var/jenkins_home/workspace/intropipeline_master'
-        sh 'myscript.sh'
+        sh './myscript.sh'
       }
     }
 

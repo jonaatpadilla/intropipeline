@@ -5,7 +5,7 @@ pipeline {
       steps {
         sh 'echo "Un paso sencillo en una linea"'
         sh '''
-            echo "Pasos multitarea"\'
+            echo "Pasos multitarea"
             cd /tmp
             ls -lrt
             '''

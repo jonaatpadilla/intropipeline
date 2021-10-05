@@ -32,7 +32,7 @@ pipeline {
     stage('test: integration y calidad') {
       steps {
         sh 'echo "Paso de test: Integration y calidad"'
-        sh 'cd /var/jenkins_home/workspace/intropipeline_master'
+        sh 'chmod -xr ./myscript.sh'
         sh './myscript.sh'
       }
     }

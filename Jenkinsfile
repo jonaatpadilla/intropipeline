@@ -68,13 +68,16 @@ pipeline {
   post {
     always {
       echo 'El pipeline se ejecuto exitosamente!'
+      mail(to: 'jpadilla@na-at.com.mx', subject: 'Pipeline exitoso', body: 'El pipeline se ejecuto exitosamente')
     }
 
     failure {
-      echo 'Fallo la ejecucion del pipeline'
+      echo 'Error en el pipeline del ejercicio del curso de docker'
+      mail(to: 'jpadilla@na-at.com.mx', subject: 'Pipeline fallido', body: 'Error en el pipeline del ejercicio del curso de docker')
     }
 
     aborted {
+      mail(to: 'jpadilla@na-at.com.mx', subject: 'Pipeline abortado', body: 'El pipeline se forzo a terminar')
       echo 'No termino de correr el pipeline, fue forzado a terminar'
     }
 

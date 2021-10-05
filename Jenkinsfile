@@ -67,7 +67,15 @@ pipeline {
   }
   post {
     always {
-      echo 'El pipeline se ejecutó exitosamente!'
+      echo 'El pipeline se ejecuto exitosamente!'
+    }
+
+    failure {
+      echo 'Fallo la ejecucion del pipeline'
+    }
+
+    aborted {
+      echo 'No termino de correr el pipeline, fue forzado a terminar'
     }
 
   }

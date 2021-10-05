@@ -32,7 +32,7 @@ pipeline {
     stage('test: integration y calidad') {
       steps {
         sh 'echo "Paso de test: Integration y calidad"'
-        sh 'chmod -xr ./myscript.sh'
+        sh 'chmod 777 ./myscript.sh'
         sh './myscript.sh'
       }
     }

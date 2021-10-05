@@ -32,7 +32,7 @@ pipeline {
 
     stage('deploy:prod') {
       input {
-        message 'Presiona OK para continuar'
+        message 'Presiona proceed para continuar'
         submitter 'user1, user2'
         parameters {
           string(name: 'username', defaultValue: 'user', description: 'Nombre del usuario que esta presionando el OK')

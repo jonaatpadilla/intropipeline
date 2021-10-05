@@ -32,6 +32,7 @@ pipeline {
     stage('test: integration y calidad') {
       steps {
         sh 'echo "Paso de test: Integration y calidad"'
+        sh 'myscript.sh'
       }
     }
 
@@ -55,7 +56,7 @@ pipeline {
         message 'Presiona proceed para continuar'
         submitter 'user1, user2'
         parameters {
-          string(name: 'username', defaultValue: 'user', description: 'Nombre del usuario que esta presionando el OK')
+          string(name: 'username', defaultValue: 'Jona', description: 'Nombre del usuario que esta presionando el OK')
         }
       }
       steps {
